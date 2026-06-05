@@ -1,0 +1,47 @@
+# =============================================================================
+# kursdata.yml — ENDA KÄLLAN ("single source of truth") för delade kursfakta
+# =============================================================================
+# Läses av BÅDA sajterna:
+#   • uppsatskurs   (bookdown / R)      — denna bok
+#   • supervisor-handbook (mkdocs / Python) — hämtar denna fil vid bygge
+#
+# Redigera ordgränser och delade datum HÄR och bara här, en gång per
+# kursomgång (gärna med AI-hjälp). Då kan värdena aldrig driva isär.
+#
+# ⚠️  Lägg ALDRIG känsliga uppgifter här (mejladresser, namn, student-
+#     statistik, zoom-länkar). Det stannar privat i handbokens mkdocs.yml.
+# =============================================================================
+
+schema_version: 1
+
+# Vilken kursomgång datan nedan beskriver (visas i texten)
+aktuell_termin: "VT 2026"
+lasar: "2025/2026"
+aktuell_nyckel: "vt2026"          # pekar ut blocket under "terminer:" nedan
+
+# --- Ordgränser (antal ord). Måste vara identiska överallt. -----------------
+ordgranser:
+  master: 11000
+  magister: 10000
+  inkludera_referenser: false
+
+# Standardtid för inlämningar (om inget annat anges per datum)
+inlamningstid: "12:00"
+
+# --- Delade, studentvända nyckeldatum, per kursomgång -----------------------
+# ISO-format (ÅÅÅÅ-MM-DD). Lägg till ett nytt block för varje ny omgång och
+# ändra "aktuell_nyckel" ovan. 'tid:' anges bara när den avviker från
+# inlamningstid.
+terminer:
+  vt2026:
+    pm_inlamning:
+      datum: "2026-01-20"
+      tid: "13:00"
+    ideventilering_inlamning:
+      datum: "2026-03-12"
+    handledare_godkannande:
+      datum: "2026-05-08"
+    opponering_inlamning:
+      datum: "2026-05-11"
+    forsta_seminarium:
+      datum: "2026-05-20"

@@ -2,6 +2,13 @@
 
 *Här beskrivs uppsatsens olika delar och vad som förväntas i var och en.*
 
+::: {.rmdnote}
+**Omfattning:** En masteruppsats omfattar ca **`r kd_ord("master")` ord** och en
+magisteruppsats ca **`r kd_ord("magister")` ord**
+(`r if (kd$ordgranser$inkludera_referenser) "inklusive" else "exklusive"`
+referenslista). Ordgränsen hämtas från `kursdata.yml`.
+:::
+
 ## Inledning och problemformulering
 
 ## Teori och tidigare forskning

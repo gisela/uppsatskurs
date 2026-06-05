@@ -10,6 +10,31 @@ github-repo: gisela/uppsatskurs
 url: https://gisela.github.io/uppsatskurs/
 ---
 
+```{r kursdata-setup, include=FALSE}
+# Läser den ENDA källan för delade kursfakta (ordgränser, datum, termin).
+# Redigera värdena i kursdata.yml — aldrig hårdkodat i kapitlen.
+kd <- yaml::read_yaml("kursdata.yml")
+
+# Datum för aktuell kursomgång (styrs av "aktuell_nyckel" i kursdata.yml)
+.termin <- kd$terminer[[kd$aktuell_nyckel]]
+
+# Hjälpare: formatera ett nyckeldatum på svenska, t.ex. "20 januari 2026 kl 13:00"
+kd_datum <- function(nyckel, med_tid = TRUE) {
+  d <- .termin[[nyckel]]
+  if (is.null(d)) stop("Okänt datum: ", nyckel)
+  manad <- c("januari","februari","mars","april","maj","juni","juli",
+             "augusti","september","oktober","november","december")
+  dt <- as.Date(d$datum)
+  txt <- paste0(as.integer(format(dt, "%d")), " ",
+                manad[as.integer(format(dt, "%m"))], " ", format(dt, "%Y"))
+  tid <- if (!is.null(d$tid)) d$tid else kd$inlamningstid
+  if (med_tid) paste0(txt, " kl ", tid) else txt
+}
+
+# Hjälpare: ordgräns med tusentalsavgränsare, t.ex. "11 000"
+kd_ord <- function(niva) format(kd$ordgranser[[niva]], big.mark = " ")
+```
+
 # Välkommen {-}
 
 Det här är kursboken för uppsatskursen. Den fungerar som ryggrad genom hela
