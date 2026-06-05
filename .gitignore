@@ -1,14 +1,10 @@
-# R
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+# MkDocs
+site/
 
-# bookdown
-_bookdown_files/
-*_files/
-*_cache/
-uppsatskurs.rds
+# Python
+__pycache__/
+*.pyc
+.venv/
 
 # OS
 .DS_Store

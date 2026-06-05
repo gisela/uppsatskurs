@@ -1,0 +1,51 @@
+site_name: Uppsatskurs
+site_description: Kursbok och guide för uppsatskursen på avancerad nivå
+site_url: https://gisela.github.io/uppsatskurs/
+repo_url: https://github.com/gisela/uppsatskurs
+docs_dir: docs
+
+theme:
+  name: material
+  language: sv
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Mörkt läge
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Ljust läge
+
+plugins:
+  - search:
+      lang: sv
+  - macros
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      locale: sv
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - attr_list
+
+nav:
+  - Hem: index.md
+  - Kursinformation: sections/01-kursinformation.md
+  - Tidsplan: sections/02-tidsplan.md
+  - Uppsatsens delar: sections/03-uppsatsens-delar.md
+  - Resurser och mallar: sections/04-resurser.md
+
+# OBS: delade kursfakta (ordgränser, datum) ligger INTE här utan i
+# kursdata.yml och läses in via main.py (mkdocs-macros). Se DELAD-KURSDATA.md.

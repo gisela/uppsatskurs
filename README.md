@@ -1,29 +1,33 @@
 # Uppsatskurs
 
-Kursbok/hemsida för uppsatskursen, byggd med [bookdown](https://bookdown.org/).
+Kursbok/hemsida för uppsatskursen, byggd med [MkDocs](https://www.mkdocs.org/)
+och [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) — samma
+verktyg som handledarhandboken (`supervisor-handbook`).
 
 📖 **Publicerad sida:** https://gisela.github.io/uppsatskurs/
 
-## Bygga boken lokalt
-
-```r
-# i R, från projektmappen
-bookdown::render_book("index.Rmd")
-```
-
-eller från terminalen:
+## Jobba lokalt
 
 ```sh
-Rscript build.R
+pip install -r requirements.txt
+mkdocs serve     # förhandsvisa på http://127.0.0.1:8000
+mkdocs build     # bygg statisk sajt till ./site
 ```
 
-Resultatet hamnar i `docs/` och publiceras via GitHub Pages (gren `main`, mapp `/docs`).
+Publicering sker automatiskt: vid push till `main` bygger och deployar
+GitHub Actions (`.github/workflows/deploy.yml`) till GitHub Pages.
 
 ## Struktur
 
-- `index.Rmd` – bokens titel/metadata + välkomstsida
-- `0X-*.Rmd` – ett kapitel per fil (ordning styrs i `_bookdown.yml`)
-- `_bookdown.yml` – bokkonfiguration (kapitelordning, output_dir)
-- `_output.yml` – utseende (gitbook-temat)
-- `style.css` – egna stilar
-- `build.R` – byggskript
+- `docs/` – innehållet (Markdown)
+- `mkdocs.yml` – konfiguration, tema, navigering, plugins
+- `main.py` – mkdocs-macros: läser in delade kursfakta från `kursdata.yml`
+- `kursdata.yml` – **enda källan** för ordgränser och delade datum (se nedan)
+
+## Delad kursdata
+
+`kursdata.yml` är den gemensamma källan för fakta som måste vara identiska i
+både denna bok och handledarhandboken (ordgränser, nyckeldatum, termin).
+Använd den i sidorna via macros, t.ex. `{{ ordgrans("master") }}` eller
+`{{ datum("pm_inlamning") }}`. Redigera värdena där — aldrig hårdkodat.
+Se [DELAD-KURSDATA.md](DELAD-KURSDATA.md).

@@ -5,5 +5,3 @@
 - Uppsatsmall
 - Referenshantering (APA)
 - Bibliotekets guider
-
-`r if (knitr::is_html_output()) '# Referenser {-}'`

@@ -1,0 +1,10 @@
+# MkDocs och tema
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0
+
+# Plugins
+mkdocs-macros-plugin>=1.0.0
+mkdocs-git-revision-date-localized-plugin>=1.2.0
+
+# Läsa kursdata.yml i main.py
+pyyaml>=6.0
