@@ -1,0 +1,7 @@
+# Pekar R/rmarkdown mot pandoc som följer med Quarto (aarch64).
+# Behövs när R körs utanför RStudio.
+RSTUDIO_PANDOC=/Applications/quarto/bin/tools/aarch64
+
+# Säkerställ UTF-8 så svenska tecken (å ä ö) fungerar vid bygge.
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8

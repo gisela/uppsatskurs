@@ -1,0 +1,14 @@
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# bookdown
+_bookdown_files/
+*_files/
+*_cache/
+uppsatskurs.rds
+
+# OS
+.DS_Store

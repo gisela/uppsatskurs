@@ -1,0 +1,15 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Uppsatskurs</a></li>
+      collapse: section
+    sharing:
+      facebook: false
+      twitter: false
+    download: ["pdf"]
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2

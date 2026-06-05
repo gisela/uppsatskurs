@@ -1,0 +1,9 @@
+# Tidsplan
+
+*En översikt över kursens veckor, deadlines och seminarier.*
+
+| Vecka | Moment | Deadline |
+|------:|--------|----------|
+| 1 | Kursintroduktion | — |
+| 2 | PM / forskningsplan | |
+| … | … | |

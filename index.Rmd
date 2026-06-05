@@ -1,0 +1,24 @@
+---
+title: "Uppsatskurs"
+author: "Gisela"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+site: bookdown::bookdown_site
+documentclass: book
+lang: sv
+description: "Kursbok och guide för uppsatskursen på avancerad nivå."
+github-repo: gisela/uppsatskurs
+url: https://gisela.github.io/uppsatskurs/
+---
+
+# Välkommen {-}
+
+Det här är kursboken för uppsatskursen. Den fungerar som ryggrad genom hela
+kursen: här hittar du tidsplan, krav, instruktioner, mallar och resurser
+samlade på ett ställe.
+
+Använd menyn till vänster för att navigera mellan kapitlen.
+
+::: {.rmdnote}
+**Tips:** Boken uppdateras löpande under kursens gång. Sidan du läser nu byggs
+automatiskt från källtexten på GitHub.
+:::
